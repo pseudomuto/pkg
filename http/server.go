@@ -11,6 +11,10 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+const (
+	defaultShutdownTimeout = 5 * time.Second
+)
+
 // ServerOpts describes options for running HTTP servers
 type ServerOpts struct {
 	// The Done channel is closed when the server has been shutdown
@@ -34,7 +38,7 @@ func DefaultServerOpts() ServerOpts {
 		Logger:          log.WithField("host", host),
 		Signals:         []os.Signal{syscall.SIGINT, syscall.SIGTERM},
 		SignalTrap:      make(chan os.Signal, 1),
-		ShutdownTimeout: 5 * time.Second,
+		ShutdownTimeout: defaultShutdownTimeout,
 	}
 }
 
