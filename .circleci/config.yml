@@ -9,8 +9,11 @@ jobs:
           keys:
             - go-mod-v1-{{ checksum "go.sum" }}
 
-      - run: make test
+      - run: make setup
+      - run: make test lint coverage
+      - run: bash <(curl -s https://codecov.io/bash)
 
       - save_cache:
-          keys:
-            - go-mod-v1-{{ checksum "go.sum" }}
+          key: go-mod-v1-{{ checksum "go.sum" }}
+          paths:
+            - /go/pkg/mod
