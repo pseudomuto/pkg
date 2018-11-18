@@ -9,4 +9,4 @@ lint:
 	@revive -config revive.toml ./...
 
 test:
-	@go test -cover ./http
+	@go test -cover ./gen ./http

@@ -11,4 +11,5 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 * `http.RunServer` for running a server that gracefully shuts down when terminating
 * `http.WithLogging` middleware for logging requests
+* `Range`, `RangeFrom`, `Repeat`, `RepeatFunc`, and `Take` generators
 
