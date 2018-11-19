@@ -23,8 +23,9 @@ func TestTake(t *testing.T) {
 	}
 
 	t.Run("with cancellation", func(t *testing.T) {
-		inputStream := make(chan interface{}, 1)
+		inputStream := make(chan interface{}, 2)
 		inputStream <- 1
+		inputStream <- 2
 		defer close(inputStream)
 
 		ctx, cancel := context.WithCancel(context.Background())
