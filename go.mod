@@ -1,6 +1,7 @@
 module github.com/pseudomuto/pkg
 
 require (
+	github.com/haya14busa/goverage v0.0.0-20180129164344-eec3514a20b5
 	github.com/mgechev/revive v0.0.0-20181106060904-47d2b15cf9bc
 	github.com/sirupsen/logrus v1.2.0
 	github.com/stretchr/testify v1.2.2
