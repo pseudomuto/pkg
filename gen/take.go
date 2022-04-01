@@ -6,8 +6,8 @@ import "context"
 // other generators this can lead to some clear, easy to work with code (see the example).
 //
 // Supports cancellation via the supplied context.
-func Take(ctx context.Context, valStream <-chan interface{}, n int) <-chan interface{} {
-	stream := make(chan interface{})
+func Take[T any](ctx context.Context, valStream <-chan T, n int) <-chan T {
+	stream := make(chan T)
 
 	go func() {
 		defer close(stream)

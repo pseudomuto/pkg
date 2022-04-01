@@ -2,11 +2,10 @@ package gen_test
 
 import (
 	"context"
-	"fmt"
 	"testing"
 
 	. "github.com/pseudomuto/pkg/gen"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestTake(t *testing.T) {
@@ -18,7 +17,7 @@ func TestTake(t *testing.T) {
 
 	i := 1
 	for res := range Take(context.Background(), inputStream, 3) {
-		func(v int) { assert.Equal(t, v, res.(int)) }(i)
+		func(v int) { require.Equal(t, v, res) }(i)
 		i++
 	}
 
@@ -36,18 +35,6 @@ func TestTake(t *testing.T) {
 			count++
 		}
 
-		assert.InDelta(t, count, 1, 1)
+		require.InDelta(t, count, 1, 1)
 	})
-}
-
-// Print the number 1 ten times
-func ExampleTake() {
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	for i := range Take(ctx, Repeat(ctx, 1), 10) {
-		fmt.Print(i)
-	}
-
-	// Output: 1111111111
 }

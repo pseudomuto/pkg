@@ -1,10 +1,14 @@
 module github.com/pseudomuto/pkg
 
+go 1.18
+
 require (
-	github.com/haya14busa/goverage v0.0.0-20180129164344-eec3514a20b5
-	github.com/mgechev/revive v0.0.0-20181106060904-47d2b15cf9bc
-	github.com/sirupsen/logrus v1.2.0
-	github.com/stretchr/testify v1.2.2
-	golang.org/x/crypto v0.0.0-20181112202954-3d3f9f413869 // indirect
-	golang.org/x/sys v0.0.0-20181116161606-93218def8b18 // indirect
+	github.com/stretchr/testify v1.7.1
+	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb
+)
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )

@@ -5,13 +5,14 @@
 [![GoDoc][godoc-svg]][godoc-url]
 [![Go Report Card][goreport-svg]][goreport-url]
 
-A collection of useful components I use to help me save time when building go apps.
+A collection of packages I find to be generally useful. See the [godoc] for documentation and examples.
 
-[ci-svg]: https://circleci.com/gh/pseudomuto/pkg/tree/master.svg?style=svg
-[ci-url]: https://circleci.com/gh/pseudomuto/pkg/tree/master
+[ci-svg]: https://github.com/pseudomuto/pkg/actions/workflows/ci.yaml/badge.svg?branch=main
+[ci-url]: https://github.com/pseudomuto/pkg/actions/workflows/ci.yaml
 [codecov-svg]: https://codecov.io/gh/pseudomuto/pkg/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/pseudomuto/pkg
-[godoc-svg]: https://godoc.org/github.com/pseudomuto/pkg?status.svg
-[godoc-url]: https://godoc.org/github.com/pseudomuto/pkg
+[godoc-svg]: https://pkg.go.dev/github.com/pseudomuto/pkg?status.svg
+[godoc-url]: https://pkg.go.dev/github.com/pseudomuto/pkg
+[godoc]: https://pkg.go.dev/github.com/pseudomuto/pkg
 [goreport-svg]: https://goreportcard.com/badge/github.com/pseudomuto/pkg
 [goreport-url]: https://goreportcard.com/report/github.com/pseudomuto/pkg

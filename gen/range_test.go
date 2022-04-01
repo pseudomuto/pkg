@@ -2,11 +2,10 @@ package gen_test
 
 import (
 	"context"
-	"fmt"
 	"testing"
 
 	. "github.com/pseudomuto/pkg/gen"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestRange(t *testing.T) {
@@ -26,7 +25,7 @@ func TestRange(t *testing.T) {
 			results = append(results, val)
 		}
 
-		assert.Equal(t, test.expected, results)
+		require.Equal(t, test.expected, results)
 	}
 
 	t.Run("with cancellation", func(t *testing.T) {
@@ -38,7 +37,7 @@ func TestRange(t *testing.T) {
 			count++
 		}
 
-		assert.InDelta(t, count, 1, 1)
+		require.InDelta(t, count, 1, 1)
 	})
 }
 
@@ -62,7 +61,7 @@ func TestRangeFrom(t *testing.T) {
 			results = append(results, val)
 		}
 
-		assert.Equal(t, test.expected, results)
+		require.Equal(t, test.expected, results)
 	}
 
 	t.Run("with cancellation", func(t *testing.T) {
@@ -74,23 +73,6 @@ func TestRangeFrom(t *testing.T) {
 			count++
 		}
 
-		assert.InDelta(t, count, 1, 1)
+		require.InDelta(t, count, 1, 1)
 	})
-}
-
-// Print the first 5 integers
-func ExampleRange() {
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	for i := range Range(ctx, 5) {
-		fmt.Println(i)
-	}
-
-	// Output:
-	// 0
-	// 1
-	// 2
-	// 3
-	// 4
 }

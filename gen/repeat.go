@@ -2,11 +2,11 @@ package gen
 
 import "context"
 
-// Repeat repeats the supplied values to the returned channel
+// Repeat repeats the supplied values to the returned channel.
 //
 // Supports cancellation via the supplied context.
-func Repeat(ctx context.Context, values ...interface{}) <-chan interface{} {
-	stream := make(chan interface{})
+func Repeat[T any](ctx context.Context, values ...T) <-chan T {
+	stream := make(chan T)
 
 	go func() {
 		defer close(stream)
@@ -28,8 +28,8 @@ func Repeat(ctx context.Context, values ...interface{}) <-chan interface{} {
 // RepeatFunc calls the supplied function sending results to the returned channel.
 //
 // Supports cancellation via the supplied context.
-func RepeatFunc(ctx context.Context, fn func() interface{}) <-chan interface{} {
-	stream := make(chan interface{})
+func RepeatFunc[T any](ctx context.Context, fn func() T) <-chan T {
+	stream := make(chan T)
 
 	go func() {
 		defer close(stream)
