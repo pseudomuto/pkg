@@ -7,7 +7,7 @@ import (
 	"github.com/pseudomuto/pkg/collections"
 )
 
-// Count occurrences of works in a slice
+// Count occurrences of words in a slice
 func ExampleFold() {
 	in := []string{"some", "words", "go", "here", "and", "here", "words"}
 	counts := collections.Fold(in, make(map[string]int), func(word string, acc map[string]int) map[string]int {
